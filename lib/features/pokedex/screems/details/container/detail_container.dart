@@ -7,8 +7,8 @@ import '../../../../common/models/pokemon.dart';
 import '../../../../common/repositories/pokemon_repository.dart';
 
 class DetailArguments {
-  DetailArguments({required this.name});
-  final String name;
+  DetailArguments({required this.pokemon});
+  final Pokemon pokemon;
 }
 
 class DetailContainer extends StatelessWidget {
@@ -28,7 +28,7 @@ class DetailContainer extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done &&
             snapshot.hasData) {
           return DetailPage(
-            name: arguments.name,
+            name: arguments.pokemon.name,
             list: snapshot.data!,
           );
         }
