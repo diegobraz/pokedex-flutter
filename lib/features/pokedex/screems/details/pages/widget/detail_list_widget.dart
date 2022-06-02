@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/features/pokedex/screems/details/pages/widget/detail_item_widget.dart';
 
 import '../../../../../common/models/pokemon.dart';
 
@@ -17,15 +18,10 @@ class DetailListWidge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 100,
-      left: 0,
-      right: 0,
-      height: 350,
+    return SliverToBoxAdapter(
       child: Container(
         color: pokemon.baseColor,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -53,7 +49,7 @@ class DetailListWidge extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 200,
+              height: 300,
               width: double.infinity,
               child: PageView(
                 onPageChanged: (index) {
@@ -62,27 +58,7 @@ class DetailListWidge extends StatelessWidget {
                 controller: controller,
                 children: list.map((e) {
                   bool diff = e.name != pokemon.name;
-                  return AnimatedOpacity(
-                    duration: Duration(milliseconds: 400),
-                    opacity: diff != pokemon ? 0.4 : 1.0,
-                    child: TweenAnimationBuilder<double>(
-                        duration: Duration(milliseconds: 500),
-                        curve: Curves.easeIn,
-                        tween: Tween<double>(
-                            end: diff != pokemon ? 100 : 200,
-                            begin: diff != pokemon ? 200 : 100),
-                        builder: (context, value, chils) {
-                          return Center(
-                            child: Image.network(
-                              e.image,
-                              height: value,
-                              color: diff != pokemon
-                                  ? Colors.black.withOpacity(0.4)
-                                  : null,
-                            ),
-                          );
-                        }),
-                  );
+                  return DetailItemListWidget(isDiff: diff, pokemon: e);
                 }).toList(),
               ),
             )
