@@ -41,13 +41,13 @@ class PokemonItemWidget extends StatelessWidget {
                       Flexible(
                           child: Text(
                         pokemon.name,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 16),
                       )),
                       Text('#${pokemon.num}',
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 12))
