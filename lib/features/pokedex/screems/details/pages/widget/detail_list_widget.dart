@@ -32,7 +32,7 @@ class DetailListWidge extends StatelessWidget {
                   Flexible(
                     child: Text(
                       pokemon.name,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
                           color: Colors.white),
@@ -40,7 +40,7 @@ class DetailListWidge extends StatelessWidget {
                   ),
                   Text(
                     '#${pokemon.num}',
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),

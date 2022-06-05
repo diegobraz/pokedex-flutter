@@ -13,10 +13,10 @@ class DetailItemListWidget extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomCenter,
       child: AnimatedOpacity(
-        duration: Duration(milliseconds: 400),
+        duration: const Duration(milliseconds: 400),
         opacity: isDiff ? 0.4 : 1.0,
         child: TweenAnimationBuilder<double>(
-            duration: Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 500),
             curve: Curves.easeIn,
             tween: Tween<double>(
                 end: isDiff ? 100 : 200, begin: isDiff ? 200 : 100),

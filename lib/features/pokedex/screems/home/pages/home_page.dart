@@ -16,8 +16,8 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 8.0),
           child: Text(
             "Pokedex",
             style: TextStyle(color: Colors.black),

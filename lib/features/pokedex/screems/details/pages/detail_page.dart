@@ -67,7 +67,7 @@ class _DetailPageState extends State<DetailPage> {
               child: Stack(children: [
                 Container(color: widget.pokemon.baseColor),
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(24),
